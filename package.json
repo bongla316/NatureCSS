@@ -1,0 +1,22 @@
+{
+  "name": "naturecss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bongla316/NatureCSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bongla316/NatureCSS/issues"
+  },
+  "homepage": "https://github.com/bongla316/NatureCSS#readme",
+  "devDependencies": {
+    "node-sass": "^4.9.4"
+  }
+}
