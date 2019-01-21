@@ -1,57 +1,60 @@
 .story {
-   width: 100rem;
+   width: 75%;
    margin: 0 auto;
+   box-shadow: 0 3rem 6rem rgba($color: $color-black, $alpha: .1);
    background-color: $color-white;
-   clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100% );
-   padding: 7rem;
+   border-radius: 3px;
+   padding: 6rem;
+   padding-left: 9rem;
+   font-size: $default-font-size;
+
+   transform: skewX(-12deg);
+   & > * {
+      transform: skewX(12deg);
+   }
 
    &__image {
-      width: 17rem;
-      height: 17rem;
+      width: 15rem;
+      height: 15rem;
       border-radius: 50%;
       overflow: hidden;
       float: left;
-      margin-right: 5rem;
-      shape-outside: circle(50%);
+      -webkit-shape-outside: circle(50% at 50%);
+      shape-outside: circle(50% at 50%);
+      clip-path: circle(50% at 50%);
+      transform: translateX(-3rem) skewX(12deg);
       position: relative;
 
       &-picture {
-         background-image: url(../img/nat-8.jpg);
-         background-size: cover;
-         background-position: center;
          height: 100%;
-         transform: scale(1.25);
+         transform: translateX(-4rem) scale(1.4);
          transition: all .2s;
       }
 
       &-name {
          position: absolute;
+         font-size: 1.7rem;
+         text-transform: uppercase;
+         text-align: center;
          opacity: 0;
-         top: 75%;
+         top: 50%;
          left: 50%;
-         transform: translate(-50%, -50%);
+         transform: translate(-50%, 20%);
          color: $color-white;
          transition: all .2s ease-in;
+         backface-visibility: hidden;
       }
    }
 
    &:hover &__image {
       &-picture {
-         transform: scale(1.05);
-         filter: blur(2px); 
+         transform: translateX(-4rem) scale(1);
+         filter: blur(3px) brightness(80%); 
       }
 
       &-name {
-         top: 50%;
+         transform: translate(-50%, -50%);
          opacity: 1;
       }
    }
-
-   // &__heading {
-
-   // }
-
-   // &__paragrpah {
-
-   // }
 }
