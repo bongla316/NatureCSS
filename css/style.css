@@ -322,40 +322,49 @@ body {
     font-weight: 100; }
 
 .story {
-  width: 100rem;
+  width: 75%;
   margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%);
-  padding: 7rem; }
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story > * {
+    transform: skewX(12deg); }
   .story__image {
-    width: 17rem;
-    height: 17rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     overflow: hidden;
     float: left;
-    margin-right: 5rem;
-    shape-outside: circle(50%);
+    -webkit-shape-outside: circle(50% at 50%);
+    shape-outside: circle(50% at 50%);
+    clip-path: circle(50% at 50%);
+    transform: translateX(-3rem) skewX(12deg);
     position: relative; }
     .story__image-picture {
-      background-image: url(../img/nat-8.jpg);
-      background-size: cover;
-      background-position: center;
       height: 100%;
-      transform: scale(1.25);
+      transform: translateX(-4rem) scale(1.4);
       transition: all .2s; }
     .story__image-name {
       position: absolute;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      text-align: center;
       opacity: 0;
-      top: 75%;
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, 20%);
       color: #ffffff;
-      transition: all .2s ease-in; }
+      transition: all .2s ease-in;
+      backface-visibility: hidden; }
   .story:hover .story__image-picture {
-    transform: scale(1.05);
-    filter: blur(2px); }
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
   .story:hover .story__image-name {
-    top: 50%;
+    transform: translate(-50%, -50%);
     opacity: 1; }
 
 .header {
@@ -427,5 +436,5 @@ body {
 
 .section-stories {
   background-color: #f7f7f7;
-  padding: 25rem 0 15rem 0;
+  padding: 15rem 0;
   margin-top: -15rem; }
